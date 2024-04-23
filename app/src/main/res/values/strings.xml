@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LinguaMaster</string>
+    <string name="reading_girl">Reading girl</string>
+    <string name="lingua">Lingua</string>
+    <string name="master">Master</string>
+    <string name="learn_words_everywhere">Learn words everywhere</string>
+    <string name="welcome_text">Turn your flashcards into practice tests.\\nThis is the easiest way to learn, practice and master words through various learning and testing modes.</string>
+    <string name="get_started">Get started</string>
 </resources>
