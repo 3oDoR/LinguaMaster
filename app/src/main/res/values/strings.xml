@@ -6,4 +6,21 @@
     <string name="learn_words_everywhere">Learn words everywhere</string>
     <string name="welcome_text">Turn your flashcards into practice tests.\\nThis is the easiest way to learn, practice and master words through various learning and testing modes.</string>
     <string name="get_started">Get started</string>
+    <string name="login">Login</string>
+    <string name="background_login">background image for login page</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="or_sign_with">Or sign with</string>
+    <string name="description_sign_in_google">Button for login with google</string>
+    <string name="description_sign_in_facebook">Button for login with facebook</string>
+    <string name="description_sign_in_x">Button for login with x</string>
+    <string name="don_t_have_account">Don\'t have account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="create_your_account">Create your account</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="or_sign_up_with">- Or Sign Up with -</string>
 </resources>
