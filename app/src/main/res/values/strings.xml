@@ -23,4 +23,9 @@
     <string name="name">Name</string>
     <string name="confirm_password">Confirm password</string>
     <string name="or_sign_up_with">- Or Sign Up with -</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="add">Add</string>
+    <string name="library">Libarary</string>
+    <string name="profile">Profile</string>
 </resources>
