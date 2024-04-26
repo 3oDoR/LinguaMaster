@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "523309065895",
+    "project_id": "linguamaster-175fd",
+    "storage_bucket": "linguamaster-175fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523309065895:android:a2b162e2c71b55c071dd82",
+        "android_client_info": {
+          "package_name": "com.example.linguamaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9klxN8L1A8IUbkMf-raAGWQ-QjxnDs_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
