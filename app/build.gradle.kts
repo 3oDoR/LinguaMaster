@@ -55,4 +55,6 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.firebase.bom)
     implementation(libs.firebase.auth.ktx)
+
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
