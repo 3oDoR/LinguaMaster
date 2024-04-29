@@ -19,7 +19,8 @@ class ValidateEmailUseCase {
             )
         }
         return ValidationResult(
-            successful = true
+            successful = true,
+            errorMessage = null
         )
     }
 }

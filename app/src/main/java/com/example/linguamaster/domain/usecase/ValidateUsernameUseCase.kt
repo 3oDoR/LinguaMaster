@@ -10,7 +10,8 @@ class ValidateUsernameUseCase {
             )
         }
         return ValidationResult(
-            successful = true
+            successful = true,
+            errorMessage = null
         )
     }
 }

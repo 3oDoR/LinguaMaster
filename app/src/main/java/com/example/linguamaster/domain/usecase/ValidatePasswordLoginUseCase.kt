@@ -1,8 +1,11 @@
 package com.example.linguamaster.domain.usecase
 
-class ValidatePasswordUseCase {
+import com.google.firebase.auth.FirebaseAuth
 
-    fun execute(password: String): ValidationResult {
+class ValidatePasswordLoginUseCase {
+
+    private lateinit var auth: FirebaseAuth
+    fun execute(email: String, password: String): ValidationResult {
         if (password.length < 8) {
             return ValidationResult(
                 successful = false,
