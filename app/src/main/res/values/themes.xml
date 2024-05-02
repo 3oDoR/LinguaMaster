@@ -7,6 +7,7 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">#F5F7FB</item>
     </style>
 
     <style name="Theme.LinguaMaster" parent="Base.Theme.LinguaMaster" />

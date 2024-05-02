@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="250dp"
+        android:layout_height="148dp"
+        android:contentDescription="@string/background_card_of_sets"
+        android:paddingStart="7dp"
+        android:paddingEnd="7dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_background_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@string/example_history_12'
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="16sp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="13dp" />
+
+    <TextView
+        android:id="@+id/tv_count_terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/example_227_terms"
+        android:textColor="#1F4721"
+        android:textSize="12sp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="43dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:background="@drawable/ic_my_ellipse"/>
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="108dp"
+        android:text="@string/example_nickname"
+        android:textColor="#84858B"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/tv_first_character"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="105dp"
+        android:background="@drawable/ic_circle"
+        android:gravity="center"
+        android:contentDescription="@string/description_circle" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,7 +41,7 @@
         android:layout_marginTop="144sp" />
 
     <EditText
-        android:id="@+id/et_name"
+        android:id="@+id/et_username"
         android:layout_width="0dp"
         android:layout_height="43dp"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_create_your_account"
         android:background="@drawable/ic_background_edit_text"
         android:layout_marginTop="30dp"
-        android:hint="@string/name"
+        android:hint="@string/username"
         android:autofillHints="name"
         android:inputType="textPersonName"
         android:paddingStart="15dp"
@@ -61,7 +61,7 @@
         android:layout_height="43dp"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
-        app:layout_constraintTop_toBottomOf="@id/et_name"
+        app:layout_constraintTop_toBottomOf="@id/et_username"
         android:background="@drawable/ic_background_edit_text"
         android:layout_marginTop="15dp"
         android:hint="@string/email"

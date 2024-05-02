@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.linguamaster" />
+                  <option name="mobileSdkAppId" value="1:523309065895:android:a2b162e2c71b55c071dd82" />
+                  <option name="projectId" value="linguamaster-175fd" />
+                  <option name="projectNumber" value="523309065895" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -57,4 +57,6 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
 
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    implementation(libs.kotlinx.coroutines.android)
 }
