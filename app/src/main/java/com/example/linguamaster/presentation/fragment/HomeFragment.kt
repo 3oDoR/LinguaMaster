@@ -29,12 +29,6 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    override fun onStop() {
-        super.onStop()
-        val navBar = requireActivity().findViewById<View>(R.id.bottom_navigation)
-        navBar.visibility = View.GONE
-    }
-
     companion object {
         @JvmStatic
         fun newInstance() = HomeFragment()
