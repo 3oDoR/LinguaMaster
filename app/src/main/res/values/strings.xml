@@ -26,7 +26,7 @@
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="add">Add</string>
-    <string name="library">Libarary</string>
+    <string name="library">Library</string>
     <string name="profile">Profile</string>
     <string name="background_card_of_sets">Background card of sets</string>
     <string name="example_history_12">History 12</string>
@@ -40,16 +40,17 @@
     <string name="daily_word_from_your_sets">Daily word</string>
     <string name="example_word">Frequently</string>
     <string name="get">Search</string>
-    <string name="example_translate">Tranlate</string>
+    <string name="example_translate">Translate</string>
     <string name="description_background_create_set">Background for header of set name</string>
     <string name="name_of_the_set">Name of the set</string>
     <string name="name_of_set">Name</string>
     <string name="word">Word</string>
-    <string name="background_word_card">Backgound for item word and translate</string>
+    <string name="background_word_card">Background for item word and translate</string>
     <string name="translate">Translate</string>
     <string name="done">Done</string>
     <string name="description_add_button">button for add new item with word and translate</string>
     <string name="premium">Premium: unknown</string>
     <string name="logout">LogOut</string>
     <string name="username">Username</string>
+    <string name="public_set">Public set</string>
 </resources>
