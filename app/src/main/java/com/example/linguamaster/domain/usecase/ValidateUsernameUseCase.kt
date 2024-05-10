@@ -1,6 +1,8 @@
 package com.example.linguamaster.domain.usecase
 
-class ValidateUsernameUseCase {
+import javax.inject.Inject
+
+class ValidateUsernameUseCase @Inject constructor() {
 
     fun execute(username: String): ValidationResult {
         if (username.length < 4) {

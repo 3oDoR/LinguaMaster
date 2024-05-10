@@ -1,6 +1,8 @@
 package com.example.linguamaster.domain.usecase
 
-class ValidateConfirmPasswordUseCase {
+import javax.inject.Inject
+
+class ValidateConfirmPasswordUseCase @Inject constructor() {
 
     fun execute(password: String, confirmPassword: String): ValidationResult {
         if (confirmPassword.isBlank()) {

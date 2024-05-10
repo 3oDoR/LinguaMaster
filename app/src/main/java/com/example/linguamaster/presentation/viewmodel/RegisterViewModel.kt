@@ -8,13 +8,16 @@ import com.example.linguamaster.domain.usecase.ValidateConfirmPasswordUseCase
 import com.example.linguamaster.domain.usecase.ValidateEmailUseCase
 import com.example.linguamaster.domain.usecase.ValidatePasswordUseCase
 import com.example.linguamaster.domain.usecase.ValidateUsernameUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class RegisterViewModel(
-    private val validateUsername: ValidateUsernameUseCase = ValidateUsernameUseCase(),
-    private val validateEmail: ValidateEmailUseCase = ValidateEmailUseCase(),
-    private val validatePassword: ValidatePasswordUseCase = ValidatePasswordUseCase(),
-    private val validateConfirmPassword: ValidateConfirmPasswordUseCase = ValidateConfirmPasswordUseCase(),
-    private val registerByEmail: RegisterByEmailUseCase = RegisterByEmailUseCase()
+@HiltViewModel
+class RegisterViewModel @Inject constructor(
+    private val validateUsername: ValidateUsernameUseCase,
+    private val validateEmail: ValidateEmailUseCase,
+    private val validatePassword: ValidatePasswordUseCase,
+    private val validateConfirmPassword: ValidateConfirmPasswordUseCase,
+    private val registerByEmail: RegisterByEmailUseCase
 ) : ViewModel() {
 
     var usernameLiveData = MutableLiveData<String?>()

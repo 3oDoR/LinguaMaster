@@ -9,7 +9,9 @@ import androidx.fragment.app.commit
 import com.example.linguamaster.R
 import com.example.linguamaster.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding

@@ -7,25 +7,24 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.example.linguamaster.R
 import com.example.linguamaster.databinding.FragmentLoginBinding
 import com.example.linguamaster.domain.model.RegistrationFormState
 import com.example.linguamaster.presentation.viewmodel.LoginViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.runBlocking
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
-    private lateinit var vm: LoginViewModel
+    private val vm: LoginViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-        vm = ViewModelProvider(this)[LoginViewModel::class.java]
-
-        vm = ViewModelProvider(this)[LoginViewModel::class.java]
 
         vm.emailLiveData.observe(viewLifecycleOwner) {
             binding.etEmail.error = it

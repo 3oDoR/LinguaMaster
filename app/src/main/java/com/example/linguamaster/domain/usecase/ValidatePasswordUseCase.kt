@@ -1,6 +1,8 @@
 package com.example.linguamaster.domain.usecase
 
-class ValidatePasswordUseCase {
+import javax.inject.Inject
+
+class ValidatePasswordUseCase @Inject constructor() {
 
     fun execute(password: String): ValidationResult {
         if (password.length < 8) {

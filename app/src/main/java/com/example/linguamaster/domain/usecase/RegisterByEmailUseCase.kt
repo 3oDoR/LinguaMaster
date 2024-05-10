@@ -1,17 +1,15 @@
 package com.example.linguamaster.domain.usecase
 
 import android.net.Uri
-import android.text.TextUtils
-import android.util.Patterns
 import com.example.linguamaster.domain.model.RegistrationFormState
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
+import javax.inject.Inject
 
 
-class RegisterByEmailUseCase {
+class RegisterByEmailUseCase @Inject constructor() {
 
     private lateinit var auth: FirebaseAuth
     fun execute(registrationFormState: RegistrationFormState): Boolean {

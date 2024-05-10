@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.linguamaster.R
 import com.example.linguamaster.databinding.FragmentWelcomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WelcomeFragment : Fragment() {
     private lateinit var welcomeFragmentBinding: FragmentWelcomeBinding
 

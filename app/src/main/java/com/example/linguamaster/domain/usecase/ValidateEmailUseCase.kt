@@ -1,9 +1,9 @@
 package com.example.linguamaster.domain.usecase
 
 import android.util.Patterns
-import java.util.regex.Pattern
+import javax.inject.Inject
 
-class ValidateEmailUseCase {
+class ValidateEmailUseCase @Inject constructor() {
 
     fun execute(email: String): ValidationResult {
         if (email.isBlank()) {

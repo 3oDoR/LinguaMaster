@@ -1,11 +1,10 @@
 package com.example.linguamaster.domain.usecase
 
-import com.google.firebase.auth.FirebaseAuth
+import javax.inject.Inject
 
-class ValidatePasswordLoginUseCase {
+class ValidatePasswordLoginUseCase @Inject constructor() {
 
-    private lateinit var auth: FirebaseAuth
-    fun execute(email: String, password: String): ValidationResult {
+    fun execute(password: String): ValidationResult {
         if (password.length < 8) {
             return ValidationResult(
                 successful = false,

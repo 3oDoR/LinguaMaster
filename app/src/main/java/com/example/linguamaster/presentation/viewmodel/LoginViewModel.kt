@@ -6,15 +6,16 @@ import com.example.linguamaster.domain.model.RegistrationFormState
 import com.example.linguamaster.domain.usecase.LoginByEmailUseCase
 import com.example.linguamaster.domain.usecase.ValidateEmailUseCase
 import com.example.linguamaster.domain.usecase.ValidatePasswordUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
+import javax.inject.Inject
 
-
-class LoginViewModel(
-    private val validateEmailUseCase: ValidateEmailUseCase = ValidateEmailUseCase(),
-    private val validatePasswordUseCase: ValidatePasswordUseCase = ValidatePasswordUseCase(),
-    private val loginByEmail: LoginByEmailUseCase = LoginByEmailUseCase()
-
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+    private var validateEmailUseCase: ValidateEmailUseCase,
+    private var validatePasswordUseCase: ValidatePasswordUseCase,
+    private var loginByEmail: LoginByEmailUseCase
 ) : ViewModel() {
     val emailLiveData = MutableLiveData<String?>()
     val passwordLiveData = MutableLiveData<String?>()
@@ -33,7 +34,7 @@ class LoginViewModel(
             passwordLiveData.postValue(passwordResult.errorMessage)
             return
         }
-       runBlocking {
+        runBlocking {
             async {
                 val loginResult = loginByEmail.execute(
                     registrationFormState.email,
