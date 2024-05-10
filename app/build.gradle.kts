@@ -64,9 +64,16 @@ dependencies {
 
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    implementation(libs.kotlinx.coroutines.android)
 
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    implementation("com.google.dagger:hilt-android:2.46.1")
+    kapt("com.google.dagger:hilt-compiler:2.46.1")
+
+//     For instrumentation tests
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.46.1")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.46.1")
+//
+//     For local unit tests
+    testImplementation("com.google.dagger:hilt-android-testing:2.46.1")
+    kaptTest("com.google.dagger:hilt-compiler:2.46.1")
 
 }
