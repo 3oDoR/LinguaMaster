@@ -1,14 +1,15 @@
 package com.example.linguamaster.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.linguamaster.domain.model.RegistrationFormState
 import com.example.linguamaster.domain.usecase.LoginByEmailUseCase
 import com.example.linguamaster.domain.usecase.ValidateEmailUseCase
 import com.example.linguamaster.domain.usecase.ValidatePasswordUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.async
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -34,20 +35,23 @@ class LoginViewModel @Inject constructor(
             passwordLiveData.postValue(passwordResult.errorMessage)
             return
         }
-        runBlocking {
-            async {
-                val loginResult = loginByEmail.execute(
-                    registrationFormState.email,
-                    registrationFormState.password
-                )
-                if (!loginResult.successful) {
-                    passwordLiveData.postValue(loginResult.errorMessage)
-                    return@async
+        viewModelScope.launch {
+            try {
+                loginByEmail.execute(registrationFormState.email, registrationFormState.password) {
+                    if (it) {
+                        Log.d("MyLog", "submitData: if $it")
+                        successLoginLiveData.postValue(true)
+                    } else {
+                        Log.d("MyLog", "submitData: else $it")
+
+                    }
                 }
-                successLoginLiveData.postValue(true)
-            }.await()
+            } catch (e: Exception) {
+                Log.d("MyLog", "submitData: if $e")
+            }
         }
     }
 }
+
 
 
