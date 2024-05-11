@@ -1,6 +1,5 @@
 package com.example.linguamaster.presentation.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,7 +15,7 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private var validateEmailUseCase: ValidateEmailUseCase,
     private var validatePasswordUseCase: ValidatePasswordUseCase,
-    private var loginByEmail: LoginByEmailUseCase
+    private var loginByEmail: LoginByEmailUseCase,
 ) : ViewModel() {
     val emailLiveData = MutableLiveData<String?>()
     val passwordLiveData = MutableLiveData<String?>()
@@ -36,18 +35,12 @@ class LoginViewModel @Inject constructor(
             return
         }
         viewModelScope.launch {
-            try {
-                loginByEmail.execute(registrationFormState.email, registrationFormState.password) {
-                    if (it) {
-                        Log.d("MyLog", "submitData: if $it")
-                        successLoginLiveData.postValue(true)
-                    } else {
-                        Log.d("MyLog", "submitData: else $it")
-
-                    }
+            loginByEmail.execute(registrationFormState.email, registrationFormState.password) {
+                if (it.successful) {
+                    successLoginLiveData.postValue(true)
+                } else {
+                    passwordLiveData.postValue(it.errorMessage)
                 }
-            } catch (e: Exception) {
-                Log.d("MyLog", "submitData: if $e")
             }
         }
     }
