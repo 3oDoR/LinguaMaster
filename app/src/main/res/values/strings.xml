@@ -49,8 +49,15 @@
     <string name="translate">Translate</string>
     <string name="done">Done</string>
     <string name="description_add_button">button for add new item with word and translate</string>
-    <string name="premium">Premium: unknown</string>
+    <string name="premium">Premium</string>
     <string name="logout">LogOut</string>
     <string name="username">Username</string>
     <string name="public_set">Public set</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="profile_info">Profile info</string>
+    <string name="phone_number">Phone number</string>
+    <string name="date_of_birth">date of birth</string>
+    <string name="preferences">Preferences</string>
+    <string name="language">Language</string>
+    <string name="darkmode">Darkmode</string>
 </resources>
