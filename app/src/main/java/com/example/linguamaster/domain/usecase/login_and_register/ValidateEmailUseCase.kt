@@ -1,4 +1,4 @@
-package com.example.linguamaster.domain.usecase
+package com.example.linguamaster.domain.usecase.login_and_register
 
 import android.util.Patterns
 import javax.inject.Inject
