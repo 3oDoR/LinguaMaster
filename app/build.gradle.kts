@@ -68,13 +68,14 @@ dependencies {
 
     implementation("com.google.dagger:hilt-android:2.46.1")
     kapt("com.google.dagger:hilt-compiler:2.46.1")
-
-//     For instrumentation tests
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.46.1")
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.46.1")
-//
-//     For local unit tests
     testImplementation("com.google.dagger:hilt-android-testing:2.46.1")
     kaptTest("com.google.dagger:hilt-compiler:2.46.1")
+
+    implementation("com.squareup.picasso:picasso:2.8")
+    implementation("jp.wasabeef:picasso-transformations:2.4.0")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 
 }

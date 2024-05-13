@@ -9,7 +9,6 @@
     <string name="login">Login</string>
     <string name="background_login">background image for login page</string>
     <string name="login_to_your_account">Login to your account</string>
-    <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
     <string name="or_sign_with">Or sign with</string>
@@ -49,15 +48,20 @@
     <string name="translate">Translate</string>
     <string name="done">Done</string>
     <string name="description_add_button">button for add new item with word and translate</string>
-    <string name="premium">Premium</string>
     <string name="logout">LogOut</string>
-    <string name="username">Username</string>
     <string name="public_set">Public set</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="profile_info">Profile info</string>
-    <string name="phone_number">Phone number</string>
-    <string name="date_of_birth">date of birth</string>
     <string name="preferences">Preferences</string>
     <string name="language">Language</string>
     <string name="darkmode">Darkmode</string>
+    <string name="change_picture">Change Picture</string>
+    <string name="update">Update</string>
+
+    <string name="username">Username: </string>
+    <string name="email">Email: </string>
+    <string name="phone_number">Phone number: </string>
+    <string name="premium">Premium: </string>
+    <string name="date_of_birth">Date of birth: </string>
+
 </resources>

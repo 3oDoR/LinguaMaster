@@ -1,4 +1,4 @@
-package com.example.linguamaster.domain.usecase
+package com.example.linguamaster.domain.usecase.login_and_register
 
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase

@@ -33,19 +33,19 @@ class MainActivity : AppCompatActivity() {
     public override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
+        bindingMainActivity.bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.ic_home -> setCurrentFragment(HomeFragment.newInstance())
+                R.id.ic_search -> setCurrentFragment(SearchFragment.newInstance())
+                R.id.ic_add -> setCurrentFragment(AddFragment.newInstance())
+                R.id.ic_profile -> setCurrentFragment(ProfileFragment.newInstance())
+            }
+            true
+        }
         if (currentUser != null) {
             supportFragmentManager.commit {
                 bindingMainActivity.bottomNavigation.visibility = View.VISIBLE
                 replace(bindingMainActivity.rl.id, HomeFragment.newInstance(), "HomeFragment")
-            }
-            bindingMainActivity.bottomNavigation.setOnItemSelectedListener {
-                when(it.itemId) {
-                    R.id.ic_home -> setCurrentFragment(HomeFragment.newInstance())
-                    R.id.ic_search -> setCurrentFragment(SearchFragment.newInstance())
-                    R.id.ic_add -> setCurrentFragment(AddFragment.newInstance())
-                    R.id.ic_profile -> setCurrentFragment(ProfileFragment.newInstance())
-                }
-                true
             }
         } else {
             supportFragmentManager.commit {

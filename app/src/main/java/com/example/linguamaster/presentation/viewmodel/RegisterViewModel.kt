@@ -3,11 +3,11 @@ package com.example.linguamaster.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.linguamaster.domain.model.RegistrationFormState
-import com.example.linguamaster.domain.usecase.RegisterByEmailUseCase
-import com.example.linguamaster.domain.usecase.ValidateConfirmPasswordUseCase
-import com.example.linguamaster.domain.usecase.ValidateEmailUseCase
-import com.example.linguamaster.domain.usecase.ValidatePasswordUseCase
-import com.example.linguamaster.domain.usecase.ValidateUsernameUseCase
+import com.example.linguamaster.domain.usecase.login_and_register.RegisterByEmailUseCase
+import com.example.linguamaster.domain.usecase.login_and_register.ValidateConfirmPasswordUseCase
+import com.example.linguamaster.domain.usecase.login_and_register.ValidateEmailUseCase
+import com.example.linguamaster.domain.usecase.login_and_register.ValidatePasswordUseCase
+import com.example.linguamaster.domain.usecase.login_and_register.ValidateUsernameUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
