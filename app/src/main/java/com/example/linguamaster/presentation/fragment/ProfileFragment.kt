@@ -1,7 +1,6 @@
 package com.example.linguamaster.presentation.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -68,7 +67,6 @@ class ProfileFragment : Fragment() {
         val data = Bundle()
         data.putString("data", vm.dataToJson(vm.profileDataStateLiveData.value))
         frag.arguments = data
-        Log.d("MyLog", "onCreateView: $data")
         return frag
     }
 

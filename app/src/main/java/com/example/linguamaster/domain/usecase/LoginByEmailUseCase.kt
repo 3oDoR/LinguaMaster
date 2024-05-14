@@ -1,5 +1,6 @@
-package com.example.linguamaster.domain.usecase.login_and_register
+package com.example.linguamaster.domain.usecase
 
+import com.example.linguamaster.domain.model.ValidationResult
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers

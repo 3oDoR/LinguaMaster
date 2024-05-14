@@ -1,5 +1,6 @@
-package com.example.linguamaster.domain.usecase.login_and_register
+package com.example.linguamaster.domain.usecase
 
+import com.example.linguamaster.domain.model.ValidationResult
 import javax.inject.Inject
 
 class ValidateUsernameUseCase @Inject constructor() {

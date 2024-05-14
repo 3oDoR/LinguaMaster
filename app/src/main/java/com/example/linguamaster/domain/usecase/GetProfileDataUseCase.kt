@@ -1,4 +1,4 @@
-package com.example.linguamaster.domain.usecase.profile
+package com.example.linguamaster.domain.usecase
 
 import com.example.linguamaster.domain.model.ProfileData
 import com.google.firebase.auth.ktx.auth

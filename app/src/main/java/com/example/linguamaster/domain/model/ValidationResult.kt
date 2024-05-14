@@ -1,4 +1,4 @@
-package com.example.linguamaster.domain.usecase.login_and_register
+package com.example.linguamaster.domain.model
 
 data class ValidationResult (
     var successful: Boolean = false,

@@ -1,4 +1,4 @@
-package com.example.linguamaster.domain.usecase.login_and_register
+package com.example.linguamaster.domain.usecase
 
 import android.net.Uri
 import com.example.linguamaster.domain.model.RegistrationFormState

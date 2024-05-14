@@ -4,9 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.linguamaster.domain.model.RegistrationFormState
-import com.example.linguamaster.domain.usecase.login_and_register.LoginByEmailUseCase
-import com.example.linguamaster.domain.usecase.login_and_register.ValidateEmailUseCase
-import com.example.linguamaster.domain.usecase.login_and_register.ValidatePasswordUseCase
+import com.example.linguamaster.domain.usecase.LoginByEmailUseCase
+import com.example.linguamaster.domain.usecase.ValidateEmailUseCase
+import com.example.linguamaster.domain.usecase.ValidatePasswordUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -3,9 +3,9 @@ package com.example.linguamaster.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.linguamaster.domain.model.ProfileData
-import com.example.linguamaster.domain.usecase.profile.DataToJsonUseCase
-import com.example.linguamaster.domain.usecase.profile.GetProfileDataUseCase
-import com.example.linguamaster.domain.usecase.profile.LogOutUseCase
+import com.example.linguamaster.domain.usecase.DataToJsonUseCase
+import com.example.linguamaster.domain.usecase.GetProfileDataUseCase
+import com.example.linguamaster.domain.usecase.LogOutUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
