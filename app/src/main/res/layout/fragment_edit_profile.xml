@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="" />
+        android:contentDescription="@string/image_for_background_style" />
 
     <TextView
         android:id="@+id/tv_edit_profile"
@@ -38,7 +38,8 @@
         app:layout_constraintBottom_toBottomOf="@id/tv_edit_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/tv_edit_profile"
-        android:layout_marginStart="17dp" />
+        android:layout_marginStart="17dp"
+        android:contentDescription="@string/image_for_return_back_to_last_page" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -57,7 +58,8 @@
         app:layout_constraintBottom_toBottomOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline" />
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        android:contentDescription="@string/image_for_avatar" />
 
     <TextView
         android:id="@+id/tv_change_picture"
@@ -88,7 +90,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="36dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_username" />
+        app:layout_constraintTop_toBottomOf="@id/tv_username"
+        android:autofillHints="username"
+        android:labelFor="@id/tv_username"
+        android:inputType="text"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/tv_email"
@@ -108,7 +114,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="36dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_email" />
+        app:layout_constraintTop_toBottomOf="@id/tv_email"
+        android:autofillHints="emailAddress"
+        android:labelFor="@id/tv_email"
+        android:inputType="textEmailAddress"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/tv_phone_number"
@@ -128,7 +138,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="36dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_phone_number" />
+        app:layout_constraintTop_toBottomOf="@id/tv_phone_number"
+        android:autofillHints="phone"
+        android:inputType="phone"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/tv_date_of_birth"
@@ -148,7 +161,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="36dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_date_of_birth" />
+        app:layout_constraintTop_toBottomOf="@id/tv_date_of_birth"
+        android:autofillHints="" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_update"

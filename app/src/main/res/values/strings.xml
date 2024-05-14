@@ -63,5 +63,8 @@
     <string name="phone_number">Phone number: </string>
     <string name="premium">Premium: </string>
     <string name="date_of_birth">Date of birth: </string>
+    <string name="image_for_background_style">Image for background style</string>
+    <string name="image_for_avatar">Image for avatar</string>
+    <string name="image_for_return_back_to_last_page">Image for return back to last page</string>
 
 </resources>
