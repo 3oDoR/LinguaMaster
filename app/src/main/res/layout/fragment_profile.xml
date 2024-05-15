@@ -96,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_username" />
 
     <TextView
-        android:id="@+id/tv_phone_number"
+        android:id="@+id/tv_current_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -110,8 +110,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/premium"
-        app:layout_constraintStart_toStartOf="@id/tv_phone_number"
-        app:layout_constraintTop_toBottomOf="@id/tv_phone_number" />
+        app:layout_constraintStart_toStartOf="@id/tv_current_password"
+        app:layout_constraintTop_toBottomOf="@id/tv_current_password" />
 
     <TextView
         android:id="@+id/tv_date_of_birth"
