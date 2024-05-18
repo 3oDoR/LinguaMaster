@@ -1,14 +1,17 @@
 package com.example.linguamaster.presentation.viewmodel
 
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.linguamaster.domain.model.ProfileData
 import com.example.linguamaster.domain.usecase.ReplaceStringToClass
+import com.example.linguamaster.domain.usecase.UpdateDateOfBirthUseCase
+import com.example.linguamaster.domain.usecase.UpdateEmailUseCase
+import com.example.linguamaster.domain.usecase.UpdateUsernameUseCase
 import com.example.linguamaster.domain.usecase.ValidateDateOfBirthUseCase
 import com.example.linguamaster.domain.usecase.ValidateEmailUseCase
-import com.example.linguamaster.domain.usecase.ValidatePhoneNumberUseCase
 import com.example.linguamaster.domain.usecase.ValidateUsernameUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -18,16 +21,18 @@ class EditProfileViewModel @Inject constructor(
     private val replaceStringToClass: ReplaceStringToClass,
     private val validateUsernameUseCase: ValidateUsernameUseCase,
     private val validateEmailUseCase: ValidateEmailUseCase,
-    private val validatePhoneNumberUseCase: ValidatePhoneNumberUseCase,
     private val validateDateOfBirthUseCase: ValidateDateOfBirthUseCase,
+    private val updateUsernameUseCase: UpdateUsernameUseCase,
+    private val updateEmailUseCase: UpdateEmailUseCase,
+    private val updateDateOfBirthUseCase: UpdateDateOfBirthUseCase
 ) : ViewModel() {
 
     val profileBanksStateLiveData = MutableLiveData<ProfileData>()
     var usernameLiveData = MutableLiveData<String?>()
     var emailLiveData = MutableLiveData<String?>()
-    var phoneNumberLiveData = MutableLiveData<String?>()
     var dateOfBirthLiveData = MutableLiveData<String?>()
     var successUpdateLiveData = MutableLiveData<Boolean>()
+
     fun replaceStringToClass(profileData: String) {
         profileBanksStateLiveData.postValue(replaceStringToClass.execute(profileData))
     }
@@ -35,24 +40,31 @@ class EditProfileViewModel @Inject constructor(
     @RequiresApi(Build.VERSION_CODES.O)
     fun updateData(profileData: ProfileData) {
         val usernameResult = validateUsernameUseCase.execute(profileData.username)
-        val emailResult = validateEmailUseCase.execute(profileData.email)
-        val phoneNumberResult = validatePhoneNumberUseCase.execute(profileData.phoneNumber)
+        val emailResult = validateEmailUseCase.execute(profileData.oldEmail)
         val dateOfBirthResult = validateDateOfBirthUseCase.execute(profileData.dateOfBirth)
 
         val hasError = listOf(
             usernameResult,
             emailResult,
-            phoneNumberResult,
             dateOfBirthResult
         ).any { !it.successful }
 
         if (hasError) {
             usernameLiveData.postValue(usernameResult.errorMessage)
             emailLiveData.postValue(emailResult.errorMessage)
-            phoneNumberLiveData.postValue(phoneNumberResult.errorMessage)
             dateOfBirthLiveData.postValue(dateOfBirthResult.errorMessage)
             return
         }
+        Log.d("MyLog", "updateData: u ${profileData.username}")
+        updateUsernameUseCase.execute(profileData.username)
+        Log.d("MyLog", "updateData: e ${profileData.newEmail}")
+        updateEmailUseCase.execute(
+            profileData.oldEmail,
+            profileData.oldPassword,
+            profileData.newEmail
+        )
+        Log.d("MyLog", "updateData: d ${profileData.dateOfBirth}")
+        updateDateOfBirthUseCase.execute(profileData.dateOfBirth)
         successUpdateLiveData.postValue(true)
     }
 }

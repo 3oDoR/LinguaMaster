@@ -68,5 +68,8 @@
     <string name="image_for_return_back_to_last_page">Image for return back to last page</string>
     <string name="current_password">Current password</string>
     <string name="new_password">New password</string>
+    <string name="old_email_if_you_want_change_email_or_password">Old Email(If you want change email or password)</string>
+    <string name="new_email">New Email</string>
+    <string name="old_password">Old password</string>
 
 </resources>

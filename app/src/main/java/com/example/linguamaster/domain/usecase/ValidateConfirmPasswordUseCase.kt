@@ -6,7 +6,7 @@ import javax.inject.Inject
 class ValidateConfirmPasswordUseCase @Inject constructor() {
 
     fun execute(password: String, confirmPassword: String): ValidationResult {
-        if (confirmPassword.isBlank()) {
+        if (confirmPassword.isBlank() || password.isBlank()) {
             return ValidationResult(
                 successful = false,
                 errorMessage = "The confirm password can't be blank"

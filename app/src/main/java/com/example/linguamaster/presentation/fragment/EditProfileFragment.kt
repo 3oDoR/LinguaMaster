@@ -40,8 +40,7 @@ class EditProfileFragment : Fragment() {
                 .resize(500, 500).centerCrop().transform(CropCircleTransformation())
                 .into(binding.ivAvatar)
             binding.etUsername.setText(it.username)
-            binding.etEmail.setText(it.email)
-            binding.etPhoneNumber.setText(it.phoneNumber)
+            binding.etOldEmail.setText(it.oldEmail)
             binding.etDateOfBirth.setText(it.dateOfBirth)
         }
         observersLiveData()
@@ -57,11 +56,7 @@ class EditProfileFragment : Fragment() {
             binding.etUsername.error = it
         }
         vm.emailLiveData.observe(viewLifecycleOwner) {
-            binding.etEmail.error = it
-        }
-
-        vm.phoneNumberLiveData.observe(viewLifecycleOwner) {
-            binding.etPhoneNumber.error = it
+            binding.etOldEmail.error = it
         }
         vm.dateOfBirthLiveData.observe(viewLifecycleOwner) {
             binding.etDateOfBirth.error = it
@@ -75,12 +70,13 @@ class EditProfileFragment : Fragment() {
 
     private fun getData(): ProfileData {
         return ProfileData(
-            binding.ivAvatar.toString(),
-            binding.etUsername.text.toString(),
-            binding.etEmail.text.toString(),
-            binding.etPhoneNumber.text.toString(),
-            "",
-            binding.etDateOfBirth.text.toString()
+            uriAvatar = binding.ivAvatar.toString(),
+            username = binding.etUsername.text.toString(),
+            oldEmail = binding.etOldEmail.text.toString(),
+            newEmail = binding.etNewEmail.text.toString(),
+            oldPassword = binding.etOldPassword.text.toString(),
+            newPassword = binding.etNewPassword.text.toString(),
+            dateOfBirth = binding.etDateOfBirth.text.toString(),
         )
     }
 

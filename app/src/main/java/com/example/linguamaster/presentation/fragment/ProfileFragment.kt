@@ -34,9 +34,8 @@ class ProfileFragment : Fragment() {
                 .resize(500, 500).centerCrop().transform(CropCircleTransformation())
                 .into(binding.ivAvatar)
             binding.tvUsername.append(it.username)
-            binding.tvEmail.append(it.email)
-            binding.tvPhoneNumber.append(it.phoneNumber)
-            binding.tvPremium.text = it.premium
+            binding.tvEmail.append(it.oldEmail)
+            binding.tvPremium.append(it.premium)
             binding.tvDateOfBirth.append(it.dateOfBirth)
         }
 

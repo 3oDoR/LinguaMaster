@@ -13,8 +13,7 @@ class GetProfileDataUseCase @Inject constructor() {
             user?.photoUrl.toString(),
             user?.displayName.toString(),
             user?.email.toString(),
-            user?.phoneNumber.toString(),
-            "Premium: " + false,
+            "False",
             ""
         )
     }

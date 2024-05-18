@@ -36,6 +36,9 @@ class ValidateDateOfBirthUseCase @Inject constructor() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun isDateOfBirthValid(date: String): Boolean {
         val enteredDate = correctDateForPattern(date)
+        if (enteredDate == "") {
+            return false
+        }
         return try {
             val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
             val localDate = LocalDate.parse(enteredDate, formatter)
@@ -46,16 +49,20 @@ class ValidateDateOfBirthUseCase @Inject constructor() {
     }
 
     private fun correctDateForPattern(date: String): String {
-        val a = date.split(".")
-        var day = a[0]
-        var month = a[1]
-        val year = a[2]
-        if (day.length == 1) {
-            day = "0$day"
+        return try {
+            val a = date.split(".")
+            var day = a[0]
+            var month = a[1]
+            val year = a[2]
+            if (day.length == 1) {
+                day = "0$day"
+            }
+            if (month.length == 1) {
+                month = "0$month"
+            }
+            "$day.$month.$year"
+        } catch (e: Exception) {
+            ""
         }
-        if (month.length == 1) {
-            month = "0$month"
-        }
-        return "$day.$month.$year"
     }
 }

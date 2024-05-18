@@ -6,9 +6,11 @@ import javax.inject.Singleton
 data class ProfileData(
     val uriAvatar: String = "",
     val username: String = "",
-    val email: String = "",
-    val premium: String = "",
+    val oldEmail: String = "",
+    val newEmail: String = "",
+    val oldPassword: String = "",
+    val newPassword: String = "",
+    val premium: String = "False",
     val dateOfBirth: String = "",
-    val currentPassword: String = "",
-    val newPassword: String = ""
-)
+
+    )
