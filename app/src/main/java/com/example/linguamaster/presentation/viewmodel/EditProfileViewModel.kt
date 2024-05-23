@@ -1,7 +1,6 @@
 package com.example.linguamaster.presentation.viewmodel
 
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -55,16 +54,14 @@ class EditProfileViewModel @Inject constructor(
             dateOfBirthLiveData.postValue(dateOfBirthResult.errorMessage)
             return
         }
-        Log.d("MyLog", "updateData: u ${profileData.username}")
         updateUsernameUseCase.execute(profileData.username)
-        Log.d("MyLog", "updateData: e ${profileData.newEmail}")
         updateEmailUseCase.execute(
             profileData.oldEmail,
             profileData.oldPassword,
             profileData.newEmail
         )
-        Log.d("MyLog", "updateData: d ${profileData.dateOfBirth}")
         updateDateOfBirthUseCase.execute(profileData.dateOfBirth)
         successUpdateLiveData.postValue(true)
+
     }
 }
