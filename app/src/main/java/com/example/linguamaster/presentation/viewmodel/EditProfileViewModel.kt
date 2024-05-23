@@ -54,12 +54,14 @@ class EditProfileViewModel @Inject constructor(
             dateOfBirthLiveData.postValue(dateOfBirthResult.errorMessage)
             return
         }
+
         updateUsernameUseCase.execute(profileData.username)
         updateEmailUseCase.execute(
             profileData.oldEmail,
             profileData.oldPassword,
             profileData.newEmail
         )
+
         updateDateOfBirthUseCase.execute(profileData.dateOfBirth)
         successUpdateLiveData.postValue(true)
 
