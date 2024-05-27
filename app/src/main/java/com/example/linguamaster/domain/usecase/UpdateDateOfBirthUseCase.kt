@@ -9,27 +9,23 @@ import javax.inject.Inject
 
 
 class UpdateDateOfBirthUseCase @Inject constructor() {
+
     private val userId = Firebase.auth.currentUser!!.uid
-    private val database = FirebaseDatabase.getInstance().getReference("Users/$userId")
     private val db = Firebase.firestore
 
     fun execute(newDate: String) {
-        val userData: MutableMap<String, String> = HashMap()
-        userData["date"] = newDate
-        try {
-            db.collection("users").document(userId)
-                .get()
-                .addOnSuccessListener { result ->
-                    if (newDate.isBlank() || newDate == (result.data?.get("date"))) {
-                        return@addOnSuccessListener
-                    }
-                    db.collection("users").document(userId).set(userData)
+
+        db.collection("users").document(userId).get()
+            .addOnSuccessListener {
+                if (newDate.isBlank() || newDate == (it.data?.get("date"))) {
+                    Log.d("MyLog", "New date equals old date. Date = $newDate")
+                    return@addOnSuccessListener
                 }
-                .addOnFailureListener { exception ->
-                    Log.w("MyLog", "Error getting documents: ", exception)
-                }
-        } catch (exception: Exception) {
-            exception.printStackTrace()
-        }
+                db.collection("users").document(userId).set(mutableMapOf("date" to newDate))
+                Log.d("MyLog", "New date success changed. New date = $newDate")
+            }
+            .addOnFailureListener { exception ->
+                Log.w("MyLog", "Error getting documents: ", exception)
+            }
     }
 }
